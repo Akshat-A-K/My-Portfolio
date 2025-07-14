@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshat Kotadia | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        window.location.replace("mobile.html");
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.matchMedia("(max-width: 767px)").matches) {
+        window.location.replace("mobile.html");
+      }
+    });
+  </script>
+
+  <nav class="nav-bar">
+    <a href="#hero">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#other-projects">More</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="hero" class="section hero">
+    <div class="hero-photo-container">
+      <img src="assets/profile.jpg" alt="Akshat Kotadia" class="hero-photo" />
+    </div>
+    <div class="hero-content">
+      <h1>Hi, I'm <span>Akshat Kotadia</span></h1>
+      <p class="tagline">Turning ideas into scalable code.</p>
+      <p>Software Developer | M.Tech @ IIIT Hyderabad</p>
+      <div class="socials">
+        <a href="mailto:kotadiaakshat2003@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/akshat-kotadia-32b2b6222/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Akshat-A-K"><i class="fab fa-github"></i></a>
+        <a href="https://codeforces.com/profile/Akshat2003"><img src="assets/codeforces.jpg" height="24" /></a>
+        <a href="https://www.codechef.com/users/akshat_0933"><img src="assets/codechef.png" height="24" /></a>
+        <a href="https://leetcode.com/kotadiaakshat/"><img src="assets/leetcode.png" height="24" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section reveal">
+    <h2>About Me</h2>
+    <p>I’m a passionate software developer currently pursuing M.Tech in Computer Science at IIIT Hyderabad. I completed my B.Tech in Computer Science from Nirma University with a CGPA of 8.36/10.</p>
+    <p>I specialize in backend development, full-stack engineering, and cloud-based application architecture. I love transforming real-world challenges into software solutions using modern technologies like .NET, React, Node.js, Flask, and AWS.</p>
+    <p>I'm an enthusiastic learner and an active problem solver on platforms like Codeforces, Leetcode, and CodeChef. I'm always seeking to collaborate on meaningful projects that create impact.</p>
+  </section>
+
+  <section id="experience" class="section reveal">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="card">
+          <h3>Iolite Softwares Pvt. Ltd.</h3>
+          <p><strong>Role:</strong> Software Developer Intern</p>
+          <p><strong>Duration:</strong> Jan 2025 – Jun 2025</p>
+          <ul>
+            <li>Worked on IP Management System with AngularJS and .NET 9.</li>
+            <li>Built APIs, CI/CD flows, and database integrations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="card">
+          <h3>Solvemate Tech</h3>
+          <p><strong>Role:</strong> Software Developer Intern</p>
+          <p><strong>Duration:</strong> May 2024 – Jul 2024</p>
+          <ul>
+            <li>OAuth2.0 login integration + React dashboard with analytics.</li>
+            <li>Developed mobile app and serverless APIs on AWS.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section reveal">
+    <h2>Top Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Chat App</h3>
+        <p>ASP.NET Core & MongoDB based real-time chat platform.</p>
+        <a href="https://github.com/Akshat-A-K/ChatApp_Using_Dotnet">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Resume Revealer</h3>
+        <p>Resume parser + job role mapper using NLP and ML.</p>
+        <a href="https://github.com/Akshat-A-K/Resume-Revealer---MINeD-Hackathon">View on GitHub</a>
+      </div>
+      <div class="card">
+        <h3>Railway Booking</h3>
+        <p>Flask + MySQL chatbot ticketing system with email alerts.</p>
+        <a href="https://github.com/Akshat-A-K/Railway-ticket-booking">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section reveal">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <i class="devicon-c-plain colored" title="C"></i>
+      <i class="devicon-cplusplus-plain colored" title="C++"></i>
+      <i class="devicon-python-plain colored" title="Python"></i>
+      <i class="devicon-java-plain colored" title="Java"></i>
+      <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+      <i class="devicon-csharp-plain colored" title="C#"></i>
+      <i class="devicon-react-original colored" title="React"></i>
+      <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+      <i class="devicon-dotnetcore-plain colored" title=".NET Core"></i>
+      <i class="devicon-mysql-plain colored" title="MySQL"></i>
+      <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
+      <i class="devicon-git-plain colored" title="Git"></i>
+      <i class="devicon-docker-plain colored" title="Docker"></i>
+    </div>
+  </section>
+
+  <section id="achievements" class="section reveal">
+    <h2>Achievements</h2>
+    <div class="achievements">
+      <div class="achievement-card"><h3>GATE 2025</h3><p>99.61 percentile, AIR 665 in CS/IT</p></div>
+      <div class="achievement-card"><h3>IIIT-H PGEE</h3><p>AIR 10 in entrance for M.Tech</p></div>
+      <div class="achievement-card"><h3>MINeD Hackathon</h3><p>Runner-up for Resume Revealer</p></div>
+      <div class="achievement-card"><h3>Competitive</h3><p>CF Pupil (1330), CC 3★ (1785)</p></div>
+    </div>
+  </section>
+
+  <section id="other-projects" class="section reveal">
+    <h2>Other Projects</h2>
+    <div id="projects-grid" class="grid"></div>
+  </section>
+
+  <section id="contact" class="section reveal">
+    <h2>Contact Me</h2>
+    <p>Want to collaborate? Reach out via:</p>
+    <a class="btn" href="mailto:kotadiaakshat2003@gmail.com">Email Me</a>
+    <a class="btn" href="https://www.linkedin.com/in/akshat-kotadia-32b2b6222/">LinkedIn</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Akshat Kotadia</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
