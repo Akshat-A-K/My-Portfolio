@@ -6,129 +6,151 @@ const reposPerPage = 6;
 let allRepos = [];
 let totalPages = 0;
 
-fetch("https://api.github.com/users/Akshat-A-K/repos?per_page=100")
-  .then(res => {
-    if (!res.ok) {
-      throw new Error(`HTTP error! status: ${res.status}`);
-    }
-    return res.json();
-  })
-  .then(data => {
-    // Filter repos (exclude forks, sort by stars)
-    allRepos = data
-      .filter(repo => !repo.fork && !repo.private)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count);
-
-    totalPages = Math.ceil(allRepos.length / reposPerPage);
-
-    // Create pagination controls
-    createPaginationControls();
-
-    // Load first page
-    loadPage(0);
-
-    // Add swipe gesture support
-    addSwipeGestures();
-  })
-  .catch(error => {
-    console.warn('GitHub API failed, loading fallback projects:', error);
-    // Fallback projects
-    allRepos = [
+// Use fallback data directly for testing
+allRepos = [
       {
-        name: "AI-Powered Chatbot",
-        description: "Intelligent conversational AI built with Python and TensorFlow for natural language processing.",
-        url: "https://github.com/Akshat-A-K",
+        name: "SSD-Jigshaw-puzzle",
+        description: "SSD Jigsaw Puzzle project",
+        url: "https://github.com/Akshat-A-K/SSD-Jigshaw-puzzle",
         demo: null,
-        stars: 45,
-        language: "Python"
-      },
-      {
-        name: "Computer Vision System",
-        description: "Real-time object detection and image recognition using OpenCV and deep learning models.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 32,
-        language: "Python"
-      },
-      {
-        name: "Full-Stack Web App",
-        description: "Modern web application with React frontend and Node.js backend, featuring real-time updates.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 28,
+        stars: 0,
         language: "JavaScript"
       },
       {
-        name: "Data Analysis Dashboard",
-        description: "Interactive dashboard for data visualization and analytics using Python, Pandas, and Plotly.",
-        url: "https://github.com/Akshat-A-K",
+        name: "SSD-course-website",
+        description: "SSD Course Website",
+        url: "https://github.com/Akshat-A-K/SSD-course-website",
         demo: null,
-        stars: 21,
-        language: "Python"
-      },
-      {
-        name: "Machine Learning Pipeline",
-        description: "Automated ML pipeline for data preprocessing, model training, and deployment.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 19,
-        language: "Python"
-      },
-      {
-        name: "Portfolio Website",
-        description: "Professional portfolio website showcasing projects and skills with modern design.",
-        url: "https://github.com/Akshat-A-K/My-Portfolio",
-        demo: "https://akshat-a-k.github.io/My-Portfolio",
-        stars: 15,
+        stars: 0,
         language: "HTML"
       },
       {
-        name: "Neural Network Framework",
-        description: "Custom deep learning framework built from scratch with Python and NumPy.",
-        url: "https://github.com/Akshat-A-K",
+        name: "Profile-page-html",
+        description: "SSD Profile Page",
+        url: "https://github.com/Akshat-A-K/Profile-page-html",
         demo: null,
-        stars: 38,
-        language: "Python"
+        stars: 0,
+        language: "HTML"
       },
       {
-        name: "IoT Smart Home System",
-        description: "Complete IoT solution for smart home automation with Raspberry Pi and sensors.",
-        url: "https://github.com/Akshat-A-K",
+        name: "SSD-YantraBhashi",
+        description: "SSD YantraBhashi project",
+        url: "https://github.com/Akshat-A-K/SSD-YantraBhashi",
         demo: null,
-        stars: 29,
-        language: "Python"
-      },
-      {
-        name: "Blockchain Voting System",
-        description: "Secure and transparent voting system built on Ethereum blockchain.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 24,
-        language: "Solidity"
-      },
-      {
-        name: "Real-time Chat Application",
-        description: "Scalable chat app with WebSocket integration and modern UI.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 18,
+        stars: 2,
         language: "JavaScript"
       },
       {
-        name: "Automated Testing Suite",
-        description: "Comprehensive testing framework for web applications with CI/CD integration.",
-        url: "https://github.com/Akshat-A-K",
-        demo: null,
-        stars: 16,
-        language: "JavaScript"
+        name: "My-Portfolio",
+        description: "Professional portfolio website showcasing projects and skills with modern design.",
+        url: "https://github.com/Akshat-A-K/My-Portfolio",
+        demo: "https://akshat-a-k.github.io/My-Portfolio",
+        stars: 0,
+        language: "HTML"
       },
       {
-        name: "3D Graphics Engine",
-        description: "Custom 3D rendering engine built with WebGL and modern graphics techniques.",
-        url: "https://github.com/Akshat-A-K",
+        name: "ChatApp_Using_Dotnet",
+        description: "Chat application built using .NET",
+        url: "https://github.com/Akshat-A-K/ChatApp_Using_Dotnet",
         demo: null,
-        stars: 12,
-        language: "JavaScript"
+        stars: 0,
+        language: "C#"
+      },
+      {
+        name: "age-gender-mood-prediction",
+        description: "Computer vision system using CNNs for real-time predictions from facial images.",
+        url: "https://github.com/Akshat-A-K/age-gender-mood-prediction",
+        demo: null,
+        stars: 0,
+        language: "Jupyter Notebook"
+      },
+      {
+        name: "Road-Network-Analysis-and-Traffic-Management",
+        description: "Road network analysis and traffic management system",
+        url: "https://github.com/Akshat-A-K/Road-Network-Analysis-and-Traffic-Management",
+        demo: null,
+        stars: 0,
+        language: "Java"
+      },
+      {
+        name: "e-learning-platform",
+        description: "E-learning platform for online education",
+        url: "https://github.com/Akshat-A-K/e-learning-platform",
+        demo: null,
+        stars: 0,
+        language: "HTML"
+      },
+      {
+        name: "Resume-Revealer---MINeD-Hackathon",
+        description: "AI-powered resume parser using NLP and ML for skill prediction - MINeD Hackathon Runner-up",
+        url: "https://github.com/Akshat-A-K/Resume-Revealer---MINeD-Hackathon",
+        demo: null,
+        stars: 1,
+        language: "Jupyter Notebook"
+      },
+      {
+        name: "Akshat-A-K-Food-Delivery-Time-Prediction",
+        description: "Food delivery time prediction using machine learning",
+        url: "https://github.com/Akshat-A-K/Akshat-A-K-Food-Delivery-Time-Prediction",
+        demo: null,
+        stars: 0,
+        language: "Jupyter Notebook"
+      },
+      {
+        name: "solar-system",
+        description: "Interactive solar system visualization",
+        url: "https://github.com/Akshat-A-K/solar-system",
+        demo: null,
+        stars: 0,
+        language: "HTML"
+      },
+      {
+        name: "Railway-ticket-booking",
+        description: "Railway ticket booking system",
+        url: "https://github.com/Akshat-A-K/Railway-ticket-booking",
+        demo: null,
+        stars: 0,
+        language: "HTML"
+      },
+      {
+        name: "WT-hospital-website",
+        description: "Hospital Management Website using html, css, js and angular js",
+        url: "https://github.com/Akshat-A-K/WT-hospital-website",
+        demo: null,
+        stars: 0,
+        language: "HTML"
+      },
+      {
+        name: "Operating-Systems--Simulator-of-Sheduling-Algorithms",
+        description: "A dynamic file input-output simulator of scheduling Algorithms in OS",
+        url: "https://github.com/Akshat-A-K/Operating-Systems--Simulator-of-Sheduling-Algorithms",
+        demo: null,
+        stars: 0,
+        language: "C"
+      },
+      {
+        name: "DSA-project-Voting-Management-System",
+        description: "Voting management System in linked lists",
+        url: "https://github.com/Akshat-A-K/DSA-project-Voting-Management-System",
+        demo: null,
+        stars: 0,
+        language: "C"
+      },
+      {
+        name: "University_Management-System-using-OOP-Java",
+        description: "University Management System using OOP in Java",
+        url: "https://github.com/Akshat-A-K/University_Management-System-using-OOP-Java",
+        demo: null,
+        stars: 0,
+        language: "Java"
+      },
+      {
+        name: "POSIX-SHELL",
+        description: "Unix-like shell in C++ with job control, I/O redirection, pipelines, and signal handling.",
+        url: "https://github.com/Akshat-A-K/POSIX-SHELL",
+        demo: null,
+        stars: 0,
+        language: "C++"
       }
     ];
 
@@ -136,7 +158,6 @@ fetch("https://api.github.com/users/Akshat-A-K/repos?per_page=100")
     createPaginationControls();
     loadPage(0);
     addSwipeGestures();
-  });
 
 function createPaginationControls() {
   const projectsSection = document.querySelector('#projects');

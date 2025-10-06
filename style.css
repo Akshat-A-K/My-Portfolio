@@ -1,3 +1,5 @@
+filter: none;
+  filter: blur(4px);
 :root {
   --bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   --text: #e2e8f0;
@@ -950,10 +952,12 @@ nav.nav-bar a:hover::after {
   width: 100%;
   padding: 2rem;
   transition: all 0.4s ease;
+  filter: none;
 }
 
 #projects-grid .card:hover {
   transform: scale(1.05) translateY(-10px);
+  filter: blur(4px);
 }
 
 #projects-grid .card a {
