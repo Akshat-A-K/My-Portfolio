@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div id="preloader">
+    <div class="loader">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+  </div>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       if (window.matchMedia("(max-width: 767px)").matches) {
@@ -27,12 +33,18 @@
   <nav class="nav-bar">
     <a href="#hero">Home</a>
     <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#education">Education</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
     <a href="#skills">Skills</a>
     <a href="#achievements">Achievements</a>
+    <a href="#activities">Activities</a>
     <a href="#other-projects">More</a>
     <a href="#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
   </nav>
 
   <section id="hero" class="section hero">
@@ -41,7 +53,7 @@
     </div>
     <div class="hero-content">
       <h1>Hi, I'm <span>Akshat Kotadia</span></h1>
-      <p class="tagline">Turning ideas into scalable code.</p>
+      <p class="tagline" id="tagline">Turning ideas into scalable code.</p>
       <p>M.Tech @ IIIT Hyderabad</p>
       <div class="socials">
         <a href="mailto:kotadiaakshat2003@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -56,9 +68,53 @@
 
   <section id="about" class="section reveal">
     <h2>About Me</h2>
-    <p>I’m a passionate software developer currently pursuing M.Tech in Computer Science at IIIT Hyderabad. I completed my B.Tech in Computer Science from Nirma University with a CGPA of 8.36/10.</p>
-    <p>I specialize in backend development, full-stack engineering, and cloud-based application architecture. I love transforming real-world challenges into software solutions using modern technologies like .NET, React, Node.js, Flask, and AWS.</p>
+    <p>I'm an aspiring Machine Learning Engineer and Data Scientist currently pursuing M.Tech in Computer Science at IIIT Hyderabad. I completed my B.Tech in Computer Science from Nirma University with a CGPA of 8.36/10.</p>
+    <p>I specialize in machine learning, deep learning, AI-driven solutions, and full-stack software development, with expertise in Python, TensorFlow, PyTorch, .NET, React, and cloud technologies. I love building intelligent systems and scalable applications that solve real-world problems.</p>
     <p>I'm an enthusiastic learner and an active problem solver on platforms like Codeforces, Leetcode, and CodeChef. I'm always seeking to collaborate on meaningful projects that create impact.</p>
+  </section>
+
+  <section id="services" class="section reveal">
+    <h2>What I Do</h2>
+    <div class="grid">
+      <div class="card service-card">
+        <i class="fas fa-brain"></i>
+        <h3>Machine Learning</h3>
+        <p>Developing AI models for predictive analytics, computer vision, and natural language processing using TensorFlow, PyTorch, and scikit-learn.</p>
+      </div>
+      <div class="card service-card">
+        <i class="fas fa-code"></i>
+        <h3>Full-Stack Development</h3>
+        <p>Building scalable web applications and APIs with modern technologies like React, Node.js, .NET, and cloud platforms.</p>
+      </div>
+      <div class="card service-card">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Solutions</h3>
+        <p>Designing and deploying cloud-native applications using AWS, Docker, and serverless architectures for optimal performance.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section reveal">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="card">
+          <h3>International Institute of Information Technology, Hyderabad</h3>
+          <p><strong>Degree:</strong> M.Tech in Computer Science and Engineering</p>
+          <p><strong>Duration:</strong> Jul 2025 - Present</p>
+          <p><strong>Location:</strong> Hyderabad, India</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="card">
+          <h3>Institute Of Technology, Nirma University</h3>
+          <p><strong>Degree:</strong> B.Tech in Computer Science and Engineering</p>
+          <p><strong>Duration:</strong> Oct 2021 - May 2025</p>
+          <p><strong>CGPA:</strong> 8.36/10</p>
+          <p><strong>Location:</strong> Ahmedabad, India</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <section id="experience" class="section reveal">
@@ -68,10 +124,10 @@
         <div class="card">
           <h3>Iolite Softwares Pvt. Ltd.</h3>
           <p><strong>Role:</strong> Software Developer Intern</p>
-          <p><strong>Duration:</strong> Jan 2025 – Jun 2025</p>
+          <p><strong>Duration:</strong> Jan 2025 - Jun 2025</p>
           <ul>
-            <li>Worked on IP Management System with AngularJS and .NET 9.</li>
-            <li>Built APIs, CI/CD flows, and database integrations.</li>
+            <li>Contributed to an enterprise IP Management System using AngularJS and .NET 9.</li>
+            <li>Developed APIs and optimized backend performance with MS SQL Server.</li>
           </ul>
         </div>
       </div>
@@ -79,10 +135,11 @@
         <div class="card">
           <h3>Solvemate Tech</h3>
           <p><strong>Role:</strong> Software Developer Intern</p>
-          <p><strong>Duration:</strong> May 2024 – Jul 2024</p>
+          <p><strong>Duration:</strong> May 2024 - Jul 2024</p>
           <ul>
-            <li>OAuth2.0 login integration + React dashboard with analytics.</li>
-            <li>Developed mobile app and serverless APIs on AWS.</li>
+            <li>Integrated Google OAuth2.0 + Analytics in a MERN dashboard.</li>
+            <li>Built a React Native loyalty app with serverless AWS APIs.</li>
+            <li>Designed data pipelines for analytics, enabling user-behavior insights.</li>
           </ul>
         </div>
       </div>
@@ -93,19 +150,19 @@
     <h2>Top Projects</h2>
     <div class="grid">
       <div class="card">
-        <h3>Chat App</h3>
-        <p>ASP.NET Core & MongoDB based real-time chat platform.</p>
-        <a href="https://github.com/Akshat-A-K/ChatApp_Using_Dotnet">View on GitHub</a>
+        <h3>POSIX Shell Implementation</h3>
+        <p>Unix-like shell in C++ with job control, I/O redirection, pipelines, and signal handling.</p>
+        <a href="https://github.com/Akshat-A-K/POSIX-SHELL">View on GitHub</a>
       </div>
       <div class="card">
         <h3>Resume Revealer</h3>
-        <p>Resume parser + job role mapper using NLP and ML.</p>
+        <p>AI-powered resume parser using NLP and ML for skill prediction.</p>
         <a href="https://github.com/Akshat-A-K/Resume-Revealer---MINeD-Hackathon">View on GitHub</a>
       </div>
       <div class="card">
-        <h3>Railway Booking</h3>
-        <p>Flask + MySQL chatbot ticketing system with email alerts.</p>
-        <a href="https://github.com/Akshat-A-K/Railway-ticket-booking">View on GitHub</a>
+        <h3>Age, Gender & Mood Prediction</h3>
+        <p>Computer vision system using CNNs for real-time predictions from facial images.</p>
+        <a href="https://github.com/Akshat-A-K/age-gender-mood-prediction">View on GitHub</a>
       </div>
     </div>
   </section>
@@ -122,8 +179,15 @@
       <i class="devicon-react-original colored" title="React"></i>
       <i class="devicon-nodejs-plain colored" title="Node.js"></i>
       <i class="devicon-dotnetcore-plain colored" title=".NET Core"></i>
+      <i class="devicon-tensorflow-plain colored" title="TensorFlow"></i>
+      <i class="devicon-pytorch-plain colored" title="PyTorch"></i>
+      <i class="devicon-keras-plain colored" title="Keras"></i>
+      <i class="devicon-pandas-plain colored" title="Pandas"></i>
+      <i class="devicon-numpy-plain colored" title="NumPy"></i>
       <i class="devicon-mysql-plain colored" title="MySQL"></i>
       <i class="devicon-mongodb-plain colored" title="MongoDB"></i>
+      <i class="devicon-microsoftsqlserver-plain colored" title="MS SQL Server"></i>
+      <i class="devicon-amazonwebservices-plain colored" title="AWS"></i>
       <i class="devicon-git-plain colored" title="Git"></i>
       <i class="devicon-docker-plain colored" title="Docker"></i>
     </div>
@@ -135,7 +199,34 @@
       <div class="achievement-card"><h3>GATE 2025</h3><p>99.61 percentile, AIR 665 in CS/IT</p></div>
       <div class="achievement-card"><h3>IIIT-H PGEE</h3><p>AIR 10 in entrance for M.Tech</p></div>
       <div class="achievement-card"><h3>MINeD Hackathon</h3><p>Runner-up for Resume Revealer</p></div>
+      <div class="achievement-card"><h3>Amazon ML Summer School</h3><p>Selected for 2024 intensive ML training</p></div>
       <div class="achievement-card"><h3>Competitive</h3><p>CF Pupil (1330), CC 3★ (1785)</p></div>
+    </div>
+  </section>
+
+  <section id="activities" class="section reveal">
+    <h2>Co-Curricular Activities</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="card">
+          <h3>Junior Student Placement Coordinator</h3>
+          <p><strong>Organization:</strong> IIIT Hyderabad</p>
+          <p><strong>Location:</strong> Hyderabad, India</p>
+          <ul>
+            <li>Facilitated placement drives by coordinating between students and recruiting companies, ensuring smooth execution of the process.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="card">
+          <h3>Core Committee Member and Social Media Head</h3>
+          <p><strong>Organization:</strong> CSI, Nirma University</p>
+          <p><strong>Location:</strong> Ahmedabad, India</p>
+          <ul>
+            <li>Organized flagship events HackNUThon 4 & 5, CUBIX 4 & 5, and designed coding problems for competitions.</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
