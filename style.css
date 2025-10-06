@@ -1,32 +1,30 @@
-filter: none;
-  filter: blur(4px);
 :root {
-  --bg: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  --bg: linear-gradient(135deg, #181c2f 0%, #232946 100%);
   --text: #e2e8f0;
-  --accent: #00b4d8;
+  --accent: #0077b6;
   --accent-hover: #0096c7;
-  --card-bg: rgba(255, 255, 255, 0.08);
-  --card-border: rgba(255, 255, 255, 0.15);
-  --shadow: rgba(0, 0, 0, 0.4);
+  --card-bg: rgba(255, 255, 255, 0.07);
+  --card-border: rgba(255, 255, 255, 0.13);
+  --shadow: rgba(0, 0, 0, 0.35);
   --heading: #ffffff;
-  --glass-bg: rgba(255, 255, 255, 0.12);
-  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.10);
+  --glass-border: rgba(255, 255, 255, 0.18);
   --secondary: #64748b;
   --success: #10b981;
   --warning: #f59e0b;
 }
 
 body.light-theme {
-  --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-  --text: #1e293b;
-  --accent: #0369a1;
-  --accent-hover: #0284c7;
-  --card-bg: rgba(255, 255, 255, 0.9);
-  --card-border: rgba(0, 0, 0, 0.1);
-  --shadow: rgba(0, 0, 0, 0.15);
-  --heading: #0f172a;
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --glass-border: rgba(0, 0, 0, 0.1);
+  --bg: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #ffffff 100%);
+  --text: #232946;
+  --accent: #0077b6;
+  --accent-hover: #0096c7;
+  --card-bg: rgba(255, 255, 255, 0.98);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --shadow: rgba(0, 0, 0, 0.07);
+  --heading: #181c2f;
+  --glass-bg: rgba(255, 255, 255, 0.98);
+  --glass-border: rgba(0, 0, 0, 0.08);
   --secondary: #64748b;
   --success: #059669;
   --warning: #d97706;
@@ -266,7 +264,8 @@ body {
 .card:hover {
   transform: translateY(-8px) scale(1.02) rotate(1deg);
   box-shadow: 0 20px 40px var(--shadow);
-  filter: brightness(1.05);
+  /* No blur or brightness on hover */
+  filter: none;
 }
 
 .btn-primary, .btn-secondary {
@@ -957,7 +956,7 @@ nav.nav-bar a:hover::after {
 
 #projects-grid .card:hover {
   transform: scale(1.05) translateY(-10px);
-  filter: blur(4px);
+  filter: none;
 }
 
 #projects-grid .card a {
