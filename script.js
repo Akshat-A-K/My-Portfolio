@@ -339,6 +339,10 @@ function loadPage(page) {
   const grid = document.getElementById("projects-grid");
   if (!grid) return;
 
+  // Show loader
+  const loader = document.getElementById('preloader');
+  if (loader) loader.classList.remove('hidden');
+
   // Remove shimmer effect
   grid.classList.remove('shimmer');
 
@@ -376,6 +380,8 @@ function loadPage(page) {
       grid.style.opacity = '1';
       // Re-apply animations to new cards
       applyAnimations();
+      // Hide loader
+      if (loader) loader.classList.add('hidden');
     }, 100);
   }, 300);
 

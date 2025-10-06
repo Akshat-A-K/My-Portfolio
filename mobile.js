@@ -217,6 +217,10 @@ function loadPage(page) {
   const grid = document.getElementById("projects-grid");
   if (!grid) return;
 
+  // Show loader
+  const loader = document.getElementById('preloader');
+  if (loader) loader.classList.remove('hidden');
+
   // Remove shimmer effect
   grid.classList.remove('shimmer');
 
@@ -232,7 +236,7 @@ function loadPage(page) {
         <div class="card-header">
           <h3>${repo.name.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h3>
           <div class="repo-stats">
-            <span class="stars"><i class="fas fa-star"></i> ${repo.stargazers_count || repo.stars}</span>
+            <span class="stars"><i class="fas fa-star"></i> ${(repo.stargazers_count ?? repo.stars ?? 0) || 0}</span>
             <span class="language"><i class="fas fa-code"></i> ${repo.language || 'N/A'}</span>
           </div>
         </div>
@@ -254,6 +258,8 @@ function loadPage(page) {
       grid.style.opacity = '1';
       // Re-apply animations to new cards
       applyAnimations();
+      // Hide loader
+      if (loader) loader.classList.add('hidden');
     }, 100);
   }, 300);
 
