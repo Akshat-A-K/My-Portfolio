@@ -79,7 +79,6 @@ Portfolio/
     ├── codechef.png    # Achievement badges
     ├── codeforces.jpg
     ├── leetcode.png
-    └── icons/          # Additional icons
 ```
 
 ---
