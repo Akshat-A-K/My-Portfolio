@@ -725,6 +725,7 @@ nav.nav-bar a:hover::after {
 .hero-actions {
   margin-top: 2rem;
   display: flex;
+  gap: 1rem;
   justify-content: center;
   animation: fadeInUp 1s ease-out 0.5s both;
 }
